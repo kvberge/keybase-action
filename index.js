@@ -4,7 +4,7 @@ const github = require('@actions/github');
 const exec = require('@actions/exec');
 
 // Constant strings
-const docker_image = "bjgeiser/keybase-cli";
+const docker_image = "bjgeiser/keybase-cli:v6.5.1";
 
 function build_docker_command(_args)
 {
