@@ -1,7 +1,7 @@
 import os from "os";
-import core from '@actions/core';
-import github from '@actions/github';
-import exec from '@actions/exec';
+import * as core from '@actions/core';
+import * as github from '@actions/github';
+import * as exec from '@actions/exec';
 
 // Constant strings
 const docker_image = "bjgeiser/keybase-cli:v6.5.1";
