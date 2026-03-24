@@ -1,7 +1,7 @@
-const os = require("os");
-const core = require('@actions/core');
-const github = require('@actions/github');
-const exec = require('@actions/exec');
+import os from "os";
+import core from '@actions/core';
+import github from '@actions/github';
+import exec from '@actions/exec';
 
 // Constant strings
 const docker_image = "bjgeiser/keybase-cli:v6.5.1";
