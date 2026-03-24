@@ -8,7 +8,7 @@ const docker_image = "bjgeiser/keybase-cli:v6.5.1";
 
 function build_docker_command(_args)
 {
-    user = os.userInfo();
+    const user = os.userInfo();
     const secrets_working_dir = process.cwd()
 
     const args = [
@@ -62,7 +62,7 @@ async function clone_command()
 async function keybase_command()
 {
     const _args = core.getInput("action_command", {required: true}).split(" ");
-    var command_args = ["keybase"].concat(_args);
+    let command_args = ["keybase"].concat(_args);
     if(_args[0] == "keybase") {
         command_args = _args;
     }
@@ -79,12 +79,12 @@ async function raw_command()
 
 
 try {
-    keybase_user=core.getInput("keybase_user", {required: true});
-    keybase_paperkey=core.getInput("keybase_paperkey", {required: true});
+    const keybase_user = core.getInput("keybase_user", {required: true});
+    const keybase_paperkey = core.getInput("keybase_paperkey", {required: true});
     core.setSecret(keybase_user);
     core.setSecret(keybase_paperkey);
 
-    actionType = core.getInput("action_type", {required: true});
+    const actionType = core.getInput("action_type", {required: true});
     switch (actionType) {
         case "secrets":
             get_secrets_file();
@@ -108,7 +108,7 @@ try {
             raw_command();
             break;
         default:
-            error_str = "Unsupported action_type: " + actionType
+            const error_str = "Unsupported action_type: " + actionType
             core.error(error_str);
             throw error_str
             break;
